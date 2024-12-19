@@ -2,7 +2,7 @@
   <div class="window-title" v-if="!IsUseSysTitle && isNotMac && !IsWeb">
     <!-- 软件logo预留位置 -->
     <div style="-webkit-app-region: drag" class="logo">
-      <img src="@/assets/icons/svg/electron-logo.svg" class="icon-logo" />
+      <img src="@/assets/icons/svg/logo.svg" class="icon-logo" />
     </div>
     <!-- 菜单栏位置 -->
     <div></div>
