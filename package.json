@@ -20,9 +20,11 @@
   "dependencies": {
     "@selemondev/vue3-marquee": "^0.0.8",
     "@vueuse/core": "^11.1.0",
+    "@vueuse/integrations": "^12.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
+    "echarts": "^5.5.1",
     "electron-log": "^5.2.3",
     "electron-updater": "^6.3.9",
     "element-plus": "^2.9.1",
@@ -53,6 +55,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.12.2",
     "@types/postcss-import": "^14.0.3",
+    "@types/qrcode": "^1.5.5",
     "@vee-validate/zod": "^4.14.7",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
@@ -95,6 +98,7 @@
     "vee-validate": "^4.14.7",
     "vite": "^6.0.3",
     "vitest": "^2.1.8",
+    "watermark-js-plus": "^1.5.7",
     "zod": "^3.24.1",
     "zod-defaults": "^0.1.3"
   },
