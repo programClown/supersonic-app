@@ -6,6 +6,7 @@ import viteIkarosTools from './plugin/vite-ikaros-tools'
 import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 import { getConfig } from './utils'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 function resolve(dir: string) {
   return join(__dirname, '..', dir)
@@ -41,6 +42,13 @@ export default defineConfig({
     cssCodeSplit: false
   },
   server: {},
-  plugins: [vueJsx(), vuePlugin(), viteIkarosTools()],
+  plugins: [
+    ElementPlus({
+      format: 'esm'
+    }),
+    vueJsx(),
+    vuePlugin(),
+    viteIkarosTools()
+  ],
   optimizeDeps: {}
 })

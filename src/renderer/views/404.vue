@@ -21,10 +21,7 @@
 <script setup lang="ts">
 import img_404 from '@/assets/404_images/404.png'
 import img_404_cloud from '@/assets/404_images/404_cloud.png'
-import { useStoreTemplate } from '@store/template'
 const { ipcRendererChannel } = window
-const storeTemplate = useStoreTemplate()
-console.log(storeTemplate.$state.testData)
 
 ipcRendererChannel.SendDataTest.on((event, data) => {
   console.log(event)

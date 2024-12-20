@@ -8,20 +8,21 @@
     "declaration": false,
     "module": "esnext",
     "moduleResolution": "node",
+    "types": ["vite/client"],
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "target": "es2017",
+    "target": "esnext",
     "paths": {
       "@config/*": ["config/*"],
       "@/*": ["src/renderer/*"],
       "@main/*": ["src/main/*"],
-      "@store/*": ["src/renderer/store/modules/*"]
+      "@store/*": ["src/renderer/stores/modules/*"]
     },
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"]
+    "typeRoots": ["node_modules/@types", "node_modules"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
   },
   "include": ["src/**/*", "customTypes/*"],
   "exclude": ["node_modules"]
