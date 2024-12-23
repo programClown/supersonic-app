@@ -19,7 +19,8 @@
       "@config/*": ["config/*"],
       "@/*": ["src/renderer/*"],
       "@main/*": ["src/main/*"],
-      "@store/*": ["src/renderer/stores/modules/*"]
+      "@store/*": ["src/renderer/stores/*"],
+      "@vben/*": ["src/vben/*"],
     },
     "typeRoots": ["node_modules/@types", "node_modules"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
