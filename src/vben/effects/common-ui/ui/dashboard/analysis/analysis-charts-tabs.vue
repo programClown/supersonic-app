@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { TabOption } from '@/@core/base/typings'
+import type { TabOption } from '@vben/@core/base/typings'
 
 import { computed } from 'vue'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/@core/ui-kit/shadcn-ui'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@vben/@core/ui-kit/shadcn-ui'
 
 interface Props {
   tabs: TabOption[]

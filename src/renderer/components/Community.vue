@@ -9,7 +9,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import DiscordIcon from "@/icons/DiscordIcon.vue";
+import DiscordIcon from "@vben/icons/DiscordIcon.vue";
 </script>
 
 <template>

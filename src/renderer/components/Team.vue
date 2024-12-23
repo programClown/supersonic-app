@@ -7,9 +7,9 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 
-import LinkedInIcon from "@/icons/LinkedInIcon.vue";
-import GithubIcon from "@/icons/GithubIcon.vue";
-import XIcon from "@/icons/XIcon.vue";
+import LinkedInIcon from "@vben/icons/LinkedInIcon.vue";
+import GithubIcon from "@vben/icons/GithubIcon.vue";
+import XIcon from "@vben/icons/XIcon.vue";
 
 interface TeamProps {
   imageUrl: string;

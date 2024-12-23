@@ -30,7 +30,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': root,
-      '@store': join(root, '/store/modules')
+      '@store': join(root, '/store/modules'),
+      '@vben': join(root, '/../vben'),
     }
   },
 

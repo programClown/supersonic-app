@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@/locales'
+import type { SupportedLanguagesType } from '@vben/locales'
 import type {
   BreadcrumbStyleType,
   BuiltinThemeType,
@@ -9,17 +9,17 @@ import type {
   NavigationStyleType,
   PreferencesButtonPositionType,
   ThemeModeType
-} from '@/@core/base/typings'
-import type { SegmentedItem } from '@/@core/ui-kit/shadcn-ui'
+} from '@vben/@core/base/typings'
+import type { SegmentedItem } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { computed, ref } from 'vue'
 
-import { Copy, RotateCw } from '@/icons/iconify'
-import { $t, loadLocaleMessages } from '@/locales'
-import { clearPreferencesCache, preferences, resetPreferences, usePreferences } from '@/preferences'
-import { useVbenDrawer } from '@/@core/ui-kit/popup-ui'
-import { VbenButton, VbenIconButton, VbenSegmented } from '@/@core/ui-kit/shadcn-ui'
-import { globalShareState } from '@/@core/base/shared/global-state'
+import { Copy, RotateCw } from '@vben/icons/iconify'
+import { $t, loadLocaleMessages } from '@vben/locales'
+import { clearPreferencesCache, preferences, resetPreferences, usePreferences } from '@vben/preferences'
+import { useVbenDrawer } from '@vben/@core/ui-kit/popup-ui'
+import { VbenButton, VbenIconButton, VbenSegmented } from '@vben/@core/ui-kit/shadcn-ui'
+import { globalShareState } from '@vben/@core/base/shared/global-state'
 
 import { useClipboard } from '@vueuse/core'
 

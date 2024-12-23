@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { LayoutType } from '@/@core/base/typings'
+import type { LayoutType } from '@vben/@core/base/typings'
 
-import { $t } from '@/locales'
+import { $t } from '@vben/locales'
 
 import NumberFieldItem from '../number-field-item.vue'
 import SwitchItem from '../switch-item.vue'

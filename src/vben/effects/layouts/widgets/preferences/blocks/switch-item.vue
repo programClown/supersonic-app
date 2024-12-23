@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useSlots } from 'vue'
 
-import { CircleHelp } from '@/icons/iconify'
-import { Switch, VbenTooltip } from '@/@core/ui-kit/shadcn-ui'
+import { CircleHelp } from '@vben/icons/iconify'
+import { Switch, VbenTooltip } from '@vben/@core/ui-kit/shadcn-ui'
 
 defineOptions({
   name: 'PreferenceSwitchItem'

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { BuiltinThemeType } from '@/@core/base/typings'
+import type { BuiltinThemeType } from '@vben/@core/base/typings'
 
 import { computed, ref } from 'vue'
 
-import { UserRoundPen } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { BUILT_IN_THEME_PRESETS, type BuiltinThemePreset } from '@/preferences'
-import { convertToHsl, TinyColor } from '@/utils'
+import { UserRoundPen } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { BUILT_IN_THEME_PRESETS, type BuiltinThemePreset } from '@vben/preferences'
+import { convertToHsl, TinyColor } from '@vben/utils'
 
 defineOptions({
   name: 'PreferenceBuiltinTheme'

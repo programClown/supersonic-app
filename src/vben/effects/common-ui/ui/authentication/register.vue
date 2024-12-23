@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Recordable } from '@/@core/base/typings'
-import type { VbenFormSchema } from '@/@core/ui-kit/form-ui'
+import type { Recordable } from '@vben/@core/base/typings'
+import type { VbenFormSchema } from '@vben/@core/ui-kit/form-ui'
 
 import { computed, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 
-import { $t } from '@/locales'
-import { useVbenForm } from '@/@core/ui-kit/form-ui'
-import { VbenButton } from '@/@core/ui-kit/shadcn-ui'
+import { $t } from '@vben/locales'
+import { useVbenForm } from '@vben/@core/ui-kit/form-ui'
+import { VbenButton } from '@vben/@core/ui-kit/shadcn-ui'
 
 import Title from './auth-title.vue'
 

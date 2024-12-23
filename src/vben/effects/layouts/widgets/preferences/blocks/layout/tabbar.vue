@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectOption } from '@/@core/base/typings'
+import type { SelectOption } from '@vben/@core/base/typings'
 
 import { computed } from 'vue'
 
-import { $t } from '@/locales'
+import { $t } from '@vben/locales'
 
 import SelectItem from '../select-item.vue'
 import SwitchItem from '../switch-item.vue'

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Settings } from '@/icons/iconify'
-import { VbenIconButton } from '@/@core/ui-kit/shadcn-ui'
+import { Settings } from '@vben/icons/iconify'
+import { VbenIconButton } from '@vben/@core/ui-kit/shadcn-ui'
 
 import Preferences from './preferences.vue'
 

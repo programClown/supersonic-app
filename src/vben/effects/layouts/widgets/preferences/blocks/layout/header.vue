@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { LayoutHeaderModeType, SelectOption } from '@/@core/base/typings'
+import type { LayoutHeaderModeType, SelectOption } from '@vben/@core/base/typings'
 
-import { $t } from '@/locales'
+import { $t } from '@vben/locales'
 
 import SelectItem from '../select-item.vue'
 import SwitchItem from '../switch-item.vue'

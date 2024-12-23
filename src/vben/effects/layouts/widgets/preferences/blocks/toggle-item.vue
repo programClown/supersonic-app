@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SelectOption } from '@/@core/base/typings'
+import type { SelectOption } from '@vben/@core/base/typings'
 
-import { ToggleGroup, ToggleGroupItem } from '@/@core/ui-kit/shadcn-ui'
+import { ToggleGroup, ToggleGroupItem } from '@vben/@core/ui-kit/shadcn-ui'
 
 defineOptions({
   name: 'PreferenceToggleItem'

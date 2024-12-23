@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@/@core/base/typings'
+import type { MenuRecordRaw } from '@vben/@core/base/typings'
 
 import { nextTick, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
-import { SearchX, X } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { mapTree, traverseTreeValues, uniqueByField } from '@/utils'
-import { VbenIcon, VbenScrollbar } from '@/@core/ui-kit/shadcn-ui'
-import { isHttpUrl } from '@/@core/base/shared/utils'
+import { SearchX, X } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { mapTree, traverseTreeValues, uniqueByField } from '@vben/utils'
+import { VbenIcon, VbenScrollbar } from '@vben/@core/ui-kit/shadcn-ui'
+import { isHttpUrl } from '@vben/@core/base/shared/utils'
 
 import { onKeyStroke, useLocalStorage, useThrottleFn } from '@vueuse/core'
 

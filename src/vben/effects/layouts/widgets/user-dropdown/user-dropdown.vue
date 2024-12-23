@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import type { AnyFunction } from '@/@core/base/typings'
+import type { AnyFunction } from '@vben/@core/base/typings'
 
 import type { Component } from 'vue'
 import { computed, useTemplateRef, watch } from 'vue'
 
-import { useHoverToggle } from '@/effects/hooks'
-import { LockKeyhole, LogOut } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { preferences, usePreferences } from '@/preferences'
-import { useLockStore } from '@/stores'
-import { isWindowsOs } from '@/utils'
-import { useVbenModal } from '@/@core/ui-kit/popup-ui'
+import { useHoverToggle } from '@vben/effects/hooks'
+import { LockKeyhole, LogOut } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { preferences, usePreferences } from '@vben/preferences'
+import { useLockStore } from '@vben/stores'
+import { isWindowsOs } from '@vben/utils'
+import { useVbenModal } from '@vben/@core/ui-kit/popup-ui'
 import {
   Badge,
   DropdownMenu,
@@ -22,7 +22,7 @@ import {
   DropdownMenuTrigger,
   VbenAvatar,
   VbenIcon
-} from '@/@core/ui-kit/shadcn-ui'
+} from '@vben/@core/ui-kit/shadcn-ui'
 
 import { useMagicKeys, whenever } from '@vueuse/core'
 

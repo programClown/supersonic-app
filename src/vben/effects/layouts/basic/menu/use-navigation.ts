@@ -1,6 +1,6 @@
 import { type RouteRecordNormalized, useRouter } from 'vue-router'
 
-import { isHttpUrl, openRouteInNewWindow, openWindow } from '@/utils'
+import { isHttpUrl, openRouteInNewWindow, openWindow } from '@vben/utils'
 
 function useNavigation() {
   const router = useRouter()

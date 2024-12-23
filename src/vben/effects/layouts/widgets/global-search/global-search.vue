@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@/@core/base/typings'
+import type { MenuRecordRaw } from '@vben/@core/base/typings'
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 
-import { ArrowDown, ArrowUp, CornerDownLeft, MdiKeyboardEsc, Search } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { isWindowsOs } from '@/utils'
-import { useVbenModal } from '@/@core/ui-kit/popup-ui'
+import { ArrowDown, ArrowUp, CornerDownLeft, MdiKeyboardEsc, Search } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { isWindowsOs } from '@vben/utils'
+import { useVbenModal } from '@vben/@core/ui-kit/popup-ui'
 
 import { useMagicKeys, whenever } from '@vueuse/core'
 

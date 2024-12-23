@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@/@core/base/typings'
+import type { MenuRecordRaw } from '@vben/@core/base/typings'
 
 import { computed, useSlots, watch } from 'vue'
 
-import { useRefresh } from '@/effects/hooks'
-import { $t } from '@/locales'
-import { preferences, updatePreferences, usePreferences } from '@/preferences'
-import { useLockStore } from '@/stores'
-import { cloneDeep, mapTree } from '@/utils'
-import { VbenAdminLayout } from '@/@core/ui-kit/layout-ui'
-import { VbenBackTop, VbenLogo } from '@/@core/ui-kit/shadcn-ui'
+import { useRefresh } from '@vben/effects/hooks'
+import { $t } from '@vben/locales'
+import { preferences, updatePreferences, usePreferences } from '@vben/preferences'
+import { useLockStore } from '@vben/stores'
+import { cloneDeep, mapTree } from '@vben/utils'
+import { VbenAdminLayout } from '@vben/@core/ui-kit/layout-ui'
+import { VbenBackTop, VbenLogo } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets'
 import { LayoutContent, LayoutContentSpinner } from './content'

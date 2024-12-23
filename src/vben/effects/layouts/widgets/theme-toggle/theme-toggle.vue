@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { ThemeModeType } from '@/@core/base/typings'
+import type { ThemeModeType } from '@vben/@core/base/typings'
 
-import { MoonStar, Sun, SunMoon } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { preferences, updatePreferences, usePreferences } from '@/preferences'
-import { ToggleGroup, ToggleGroupItem, VbenTooltip } from '@/@core/ui-kit/shadcn-ui'
+import { MoonStar, Sun, SunMoon } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { preferences, updatePreferences, usePreferences } from '@vben/preferences'
+import { ToggleGroup, ToggleGroupItem, VbenTooltip } from '@vben/@core/ui-kit/shadcn-ui'
 
 import ThemeButton from './theme-button.vue'
 

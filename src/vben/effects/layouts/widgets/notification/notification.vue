@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { NotificationItem } from './types'
 
-import { Bell, MailCheck } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { VbenButton, VbenIconButton, VbenPopover, VbenScrollbar } from '@/@core/ui-kit/shadcn-ui'
+import { Bell, MailCheck } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { VbenButton, VbenIconButton, VbenPopover, VbenScrollbar } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { useToggle } from '@vueuse/core'
 

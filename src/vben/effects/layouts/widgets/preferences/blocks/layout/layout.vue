@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { LayoutType } from '@/@core/base/typings'
+import type { LayoutType } from '@vben/@core/base/typings'
 
 import { type Component, computed } from 'vue'
 
-import { CircleHelp } from '@/icons/iconify'
-import { $t } from '@/locales'
-import { VbenTooltip } from '@/@core/ui-kit/shadcn-ui'
+import { CircleHelp } from '@vben/icons/iconify'
+import { $t } from '@vben/locales'
+import { VbenTooltip } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { FullContent, HeaderNav, MixedNav, SidebarMixedNav, SidebarNav } from '../../icons'
 

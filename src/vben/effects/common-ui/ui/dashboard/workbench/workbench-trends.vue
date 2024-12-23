@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { WorkbenchTrendItem } from '../typing'
 
-import { Card, CardContent, CardHeader, CardTitle, VbenIcon } from '@/@core/ui-kit/shadcn-ui'
+import { Card, CardContent, CardHeader, CardTitle, VbenIcon } from '@vben/@core/ui-kit/shadcn-ui'
 
 interface Props {
   items: WorkbenchTrendItem[]

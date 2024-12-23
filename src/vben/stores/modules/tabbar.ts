@@ -1,9 +1,9 @@
-import type { TabDefinition } from '@/@core/base/typings'
+import type { TabDefinition } from '@vben/@core/base/typings'
 import type { Router, RouteRecordNormalized } from 'vue-router'
 
 import { toRaw } from 'vue'
 
-import { openRouteInNewWindow, startProgress, stopProgress } from '@/@core/base/shared/utils'
+import { openRouteInNewWindow, startProgress, stopProgress } from '@vben/@core/base/shared/utils'
 
 import { acceptHMRUpdate, defineStore } from 'pinia'
 

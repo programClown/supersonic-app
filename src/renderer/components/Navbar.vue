@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 import { ChevronsDown, Menu } from "lucide-vue-next";
-import GithubIcon from "@/icons/GithubIcon.vue";
+import GithubIcon from "@vben/icons/GithubIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
 interface RouteProps {

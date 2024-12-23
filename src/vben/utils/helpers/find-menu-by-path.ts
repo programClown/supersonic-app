@@ -1,4 +1,4 @@
-import type { MenuRecordRaw } from '@/@core/base/typings'
+import type { MenuRecordRaw } from '@vben/@core/base/typings'
 
 function findMenuByPath(list: MenuRecordRaw[], path?: string): MenuRecordRaw | null {
   for (const menu of list) {

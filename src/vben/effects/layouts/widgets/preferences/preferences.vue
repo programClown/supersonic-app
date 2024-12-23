@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 
-import { Settings } from '@/icons/iconify'
-import { $t, loadLocaleMessages } from '@/locales'
-import { preferences, updatePreferences } from '@/preferences'
-import { capitalizeFirstLetter } from '@/utils'
-import { useVbenDrawer } from '@/@core/ui-kit/popup-ui'
-import { VbenButton } from '@/@core/ui-kit/shadcn-ui'
+import { Settings } from '@vben/icons/iconify'
+import { $t, loadLocaleMessages } from '@vben/locales'
+import { preferences, updatePreferences } from '@vben/preferences'
+import { capitalizeFirstLetter } from '@vben/utils'
+import { useVbenDrawer } from '@vben/@core/ui-kit/popup-ui'
+import { VbenButton } from '@vben/@core/ui-kit/shadcn-ui'
 
 import PreferencesDrawer from './preferences-drawer.vue'
 

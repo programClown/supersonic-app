@@ -2,7 +2,7 @@ import type { Watermark, WatermarkOptions } from 'watermark-js-plus'
 
 import { nextTick, onUnmounted, readonly, ref } from 'vue'
 
-import { updatePreferences } from '@/preferences'
+import { updatePreferences } from '@vben/preferences'
 
 const watermark = ref<Watermark>()
 const unmountedHooked = ref<boolean>(false)

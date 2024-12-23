@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import { $t } from '@/locales'
-import { VbenButton } from '@/@core/ui-kit/shadcn-ui'
+import { $t } from '@vben/locales'
+import { VbenButton } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { useQRCode } from '@vueuse/integrations/useQRCode'
 

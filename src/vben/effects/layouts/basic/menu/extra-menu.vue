@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@/@core/base/typings'
-import type { MenuProps } from '@/@core/ui-kit/menu-ui'
+import type { MenuRecordRaw } from '@vben/@core/base/typings'
+import type { MenuProps } from '@vben/@core/ui-kit/menu-ui'
 
 import { useRoute } from 'vue-router'
 
-import { Menu } from '@/@core/ui-kit/menu-ui'
+import { Menu } from '@vben/@core/ui-kit/menu-ui'
 
 import { useNavigation } from './use-navigation'
 

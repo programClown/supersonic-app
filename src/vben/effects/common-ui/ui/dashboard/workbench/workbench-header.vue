@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { VbenAvatar } from '@/@core/ui-kit/shadcn-ui'
+import { VbenAvatar } from '@vben/@core/ui-kit/shadcn-ui'
 
 interface Props {
   avatar?: string

@@ -1,11 +1,11 @@
-import type { TabDefinition } from '@/@core/base/typings'
-import type { IContextMenuItem } from '@/@core/ui-kit/tabs-ui'
+import type { TabDefinition } from '@vben/@core/base/typings'
+import type { IContextMenuItem } from '@vben/@core/ui-kit/tabs-ui'
 import type { RouteLocationNormalizedGeneric } from 'vue-router'
 
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import { useContentMaximize, useTabs } from '@/effects/hooks'
+import { useContentMaximize, useTabs } from '@vben/effects/hooks'
 import {
   ArrowLeftToLine,
   ArrowRightLeft,
@@ -18,10 +18,10 @@ import {
   PinOff,
   RotateCw,
   X
-} from '@/@core/base/icons'
-import { $t, useI18n } from '@/locales'
-import { useAccessStore, useTabbarStore } from '@/stores'
-import { filterTree } from '@/utils'
+} from '@vben/@core/base/icons'
+import { $t, useI18n } from '@vben/locales'
+import { useAccessStore, useTabbarStore } from '@vben/stores'
+import { filterTree } from '@vben/utils'
 
 export function useTabbar() {
   const router = useRouter()
