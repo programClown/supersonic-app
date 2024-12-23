@@ -22,9 +22,9 @@
 //   };
 // }
 
-export function useAppConfig(
-  env: Record<string, any>,
-  isProduction: boolean,
-): string {
-    return "url";
-} 
+export function useAppConfig(): string {
+  return
+  {
+    apiURL: import.meta.env.BASE_API
+  }
+}

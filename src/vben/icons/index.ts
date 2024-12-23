@@ -1,0 +1,7 @@
+export * from './iconify/index.js'
+export { default as EmptyIcon } from './EmptyIcon.vue'
+export * from './svg/index.js'
+export { default as DiscordIcon } from './DiscordIcon.vue'
+export { default as GithubIcon } from './GithubIcon.vue'
+export { default as LinkedInIcon } from './LinkedInIcon.vue'
+export { default as XIcon } from './XIcon.vue'

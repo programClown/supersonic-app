@@ -3,7 +3,7 @@ import { computed, h, ref, type VNode, watch, watchEffect } from 'vue'
 
 import { usePagination } from '@vben/effects/hooks'
 import { Grip, listIcons } from '@vben/@core/base/icons'
-import { default as EmptyIcon } from '@/icons/EmptyIcon.vue'
+import { EmptyIcon } from '@vben/icons'
 import { $t } from '@vben/locales'
 import {
   Button,

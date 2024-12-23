@@ -2,13 +2,14 @@
  * 通用组件共同的使用的基础组件，便其他地方使
  */
 
-import type { BaseFormComponentType } from '@vben/common-ui'
-import type { Recordable } from '@vben/types'
+import type { BaseFormComponentType } from '@vben/effects/common-ui'
+import type { Recordable } from '@vben/@core/base/typings'
 
 import type { Component, SetupContext } from 'vue'
 import { h } from 'vue'
 
-import { ApiComponent, globalShareState, IconPicker } from '@vben/common-ui'
+import { ApiComponent, globalShareState, IconPicker } from '@vben/effects/common-ui'
+import { $t } from '@vben/locales'
 
 import {
   ElButton,

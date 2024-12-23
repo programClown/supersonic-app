@@ -1,48 +1,45 @@
-import type { Locale } from 'vue-i18n';
+import type { Locale } from 'vue-i18n'
 
 import type {
   ImportLocaleFn,
   LoadMessageFn,
   LocaleSetupOptions,
-  SupportedLanguagesType,
-} from './typing';
+  SupportedLanguagesType
+} from './typing'
 
-import { type App, unref } from 'vue';
-import { createI18n } from 'vue-i18n';
+import { type App, unref } from 'vue'
+import { createI18n } from 'vue-i18n'
 
-import { useSimpleLocale } from '@vben-core/composables';
+import { useSimpleLocale } from '@vben/@core/composables'
 
 const i18n = createI18n({
   globalInjection: true,
   legacy: false,
   locale: '',
-  messages: {},
-});
+  messages: {}
+})
 
-const modules = import.meta.glob('./langs/**/*.json');
+const modules = import.meta.glob('./langs/**/*.json')
 
-const { setSimpleLocale } = useSimpleLocale();
+const { setSimpleLocale } = useSimpleLocale()
 
-const localesMap = loadLocalesMapFromDir(
-  /\.\/langs\/([^/]+)\/(.*)\.json$/,
-  modules,
-);
-let loadMessages: LoadMessageFn;
+const localesMap = loadLocalesMapFromDir(/\.\/langs\/([^/]+)\/(.*)\.json$/, modules)
+let loadMessages: LoadMessageFn
 
 /**
  * Load locale modules
  * @param modules
  */
 function loadLocalesMap(modules: Record<string, () => Promise<unknown>>) {
-  const localesMap: Record<Locale, ImportLocaleFn> = {};
+  const localesMap: Record<Locale, ImportLocaleFn> = {}
 
   for (const [path, loadLocale] of Object.entries(modules)) {
-    const key = path.match(/([\w-]*)\.(json)/)?.[1];
+    const key = path.match(/([\w-]*)\.(json)/)?.[1]
     if (key) {
-      localesMap[key] = loadLocale as ImportLocaleFn;
+      localesMap[key] = loadLocale as ImportLocaleFn
     }
   }
-  return localesMap;
+  return localesMap
 }
 
 /**
@@ -53,22 +50,22 @@ function loadLocalesMap(modules: Record<string, () => Promise<unknown>>) {
  */
 function loadLocalesMapFromDir(
   regexp: RegExp,
-  modules: Record<string, () => Promise<unknown>>,
+  modules: Record<string, () => Promise<unknown>>
 ): Record<Locale, ImportLocaleFn> {
-  const localesRaw: Record<Locale, Record<string, () => Promise<unknown>>> = {};
-  const localesMap: Record<Locale, ImportLocaleFn> = {};
+  const localesRaw: Record<Locale, Record<string, () => Promise<unknown>>> = {}
+  const localesMap: Record<Locale, ImportLocaleFn> = {}
 
   // Iterate over the modules to extract language and file names
   for (const path in modules) {
-    const match = path.match(regexp);
+    const match = path.match(regexp)
     if (match) {
-      const [_, locale, fileName] = match;
+      const [_, locale, fileName] = match
       if (locale && fileName) {
         if (!localesRaw[locale]) {
-          localesRaw[locale] = {};
+          localesRaw[locale] = {}
         }
         if (modules[path]) {
-          localesRaw[locale][fileName] = modules[path];
+          localesRaw[locale][fileName] = modules[path]
         }
       }
     }
@@ -77,15 +74,15 @@ function loadLocalesMapFromDir(
   // Convert raw locale data into async import functions
   for (const [locale, files] of Object.entries(localesRaw)) {
     localesMap[locale] = async () => {
-      const messages: Record<string, any> = {};
+      const messages: Record<string, any> = {}
       for (const [fileName, importFn] of Object.entries(files)) {
-        messages[fileName] = ((await importFn()) as any)?.default;
+        messages[fileName] = ((await importFn()) as any)?.default
       }
-      return { default: messages };
-    };
+      return { default: messages }
+    }
   }
 
-  return localesMap;
+  return localesMap
 }
 
 /**
@@ -93,26 +90,24 @@ function loadLocalesMapFromDir(
  * @param locale
  */
 function setI18nLanguage(locale: Locale) {
-  i18n.global.locale.value = locale;
+  i18n.global.locale.value = locale
 
-  document?.querySelector('html')?.setAttribute('lang', locale);
+  document?.querySelector('html')?.setAttribute('lang', locale)
 }
 
 async function setupI18n(app: App, options: LocaleSetupOptions = {}) {
-  const { defaultLocale = 'zh-CN' } = options;
+  const { defaultLocale = 'zh-CN' } = options
   // app可以自行扩展一些第三方库和组件库的国际化
-  loadMessages = options.loadMessages || (async () => ({}));
-  app.use(i18n);
-  await loadLocaleMessages(defaultLocale);
+  loadMessages = options.loadMessages || (async () => ({}))
+  app.use(i18n)
+  await loadLocaleMessages(defaultLocale)
 
   // 在控制台打印警告
   i18n.global.setMissingHandler((locale, key) => {
     if (options.missingWarn && key.includes('.')) {
-      console.warn(
-        `[intlify] Not found '${key}' key in '${locale}' locale messages.`,
-      );
+      console.warn(`[intlify] Not found '${key}' key in '${locale}' locale messages.`)
     }
-  });
+  })
 }
 
 /**
@@ -121,26 +116,20 @@ async function setupI18n(app: App, options: LocaleSetupOptions = {}) {
  */
 async function loadLocaleMessages(lang: SupportedLanguagesType) {
   if (unref(i18n.global.locale) === lang) {
-    return setI18nLanguage(lang);
+    return setI18nLanguage(lang)
   }
-  setSimpleLocale(lang);
+  setSimpleLocale(lang)
 
-  const message = await localesMap[lang]?.();
+  const message = await localesMap[lang]?.()
 
   if (message?.default) {
-    i18n.global.setLocaleMessage(lang, message.default);
+    i18n.global.setLocaleMessage(lang, message.default)
   }
 
-  const mergeMessage = await loadMessages(lang);
-  i18n.global.mergeLocaleMessage(lang, mergeMessage);
+  const mergeMessage = await loadMessages(lang)
+  i18n.global.mergeLocaleMessage(lang, mergeMessage)
 
-  return setI18nLanguage(lang);
+  return setI18nLanguage(lang)
 }
 
-export {
-  i18n,
-  loadLocaleMessages,
-  loadLocalesMap,
-  loadLocalesMapFromDir,
-  setupI18n,
-};
+export { i18n, loadLocaleMessages, loadLocalesMap, loadLocalesMapFromDir, setupI18n }

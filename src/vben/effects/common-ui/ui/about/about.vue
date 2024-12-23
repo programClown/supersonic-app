@@ -3,6 +3,8 @@ import type { AboutProps, DescriptionItem } from './about'
 
 import { h } from 'vue'
 
+import { VBEN_DOC_URL, VBEN_GITHUB_URL, VBEN_PREVIEW_URL } from '@vben/constants'
+
 import { VbenRenderContent } from '@vben/@core/ui-kit/shadcn-ui'
 
 import { Page } from '../../components'
@@ -93,7 +95,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
   <Page :title="title">
     <template #description>
       <p class="text-foreground mt-3 text-sm leading-6">
-        <a :href="https://github.com/programClown/supersonic-app" class="vben-link" target="_blank">
+        <a :href="VBEN_GITHUB_URL" class="vben-link" target="_blank">
           {{ name }}
         </a>
         {{ description }}

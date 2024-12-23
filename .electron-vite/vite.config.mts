@@ -31,7 +31,7 @@ export default defineConfig({
     alias: {
       '@': root,
       '@store': join(root, '/store/modules'),
-      '@vben': join(root, '/../vben'),
+      '@vben': join(root, '/../vben')
     }
   },
 
@@ -47,7 +47,7 @@ export default defineConfig({
     ElementPlus({
       format: 'esm'
     }),
-    vueJsx(),
+    vueJsx(), // 支持jsx，tsx语法
     vuePlugin(),
     viteIkarosTools()
   ],
