@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@/@core/base/typings';
+import type { MenuRecordRaw } from '@vben/@core/base/typings';
 
 import type { MenuProps } from './types';
 
-import { useForwardProps } from '@/@core/composables';
+import { useForwardProps } from '@vben/@core/composables';
 
 import { Menu } from './components';
 import SubMenu from './sub-menu.vue';

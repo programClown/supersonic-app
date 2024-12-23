@@ -23,8 +23,5 @@
 // }
 
 export function useAppConfig(): string {
-  return
-  {
-    apiURL: import.meta.env.BASE_API
-  }
+  return import.meta.env.BASE_API
 }

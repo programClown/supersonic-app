@@ -18,7 +18,7 @@ import { useAuthStore } from '@/store'
 
 import { refreshTokenApi } from './core'
 
-const { apiURL } = useAppConfig()
+const apiURL = useAppConfig()
 
 function createRequestClient(baseURL: string) {
   const client = new RequestClient({

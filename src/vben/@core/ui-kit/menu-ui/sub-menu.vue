@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@/@core/base/typings';
+import type { MenuRecordRaw } from '@vben/@core/base/typings';
 
 import { computed } from 'vue';
 

@@ -3,7 +3,7 @@ import { createApp, watchEffect } from 'vue'
 import { registerAccessDirective } from '@vben/effects/access'
 import { preferences } from '@vben/preferences'
 import { initStores } from '@vben/stores'
-// import '@vben/@core/base/design'
+import '@vben/@core/base/design'
 import './assets/index.css'
 
 import { useTitle } from '@vueuse/core'

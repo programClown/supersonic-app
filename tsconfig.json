@@ -20,7 +20,8 @@
       "@/*": ["src/renderer/*"],
       "@main/*": ["src/main/*"],
       "@store/*": ["src/renderer/stores/*"],
-      "@vben/*": ["src/vben/*"],
+      "@vben/*": ["src/vben/*"]
+
     },
     "typeRoots": ["node_modules/@types", "node_modules"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

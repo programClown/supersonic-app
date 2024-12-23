@@ -1,18 +1,18 @@
-import type { ExtendedFormApi } from '@/@core/ui-kit/form-ui'
+import type { ExtendedFormApi } from '@vben/@core/ui-kit/form-ui'
 import type { VxeGridInstance } from 'vxe-table'
 
 import type { VxeGridProps } from './types'
 
 import { toRaw } from 'vue'
 
-import { Store } from '@/@core/base/shared/store'
+import { Store } from '@vben/@core/base/shared/store'
 import {
   bindMethods,
   isBoolean,
   isFunction,
   mergeWithArrayOverride,
   StateHandler
-} from '@/@core/base/shared/utils'
+} from '@vben/@core/base/shared/utils'
 
 function getDefaultState(): VxeGridProps {
   return {
