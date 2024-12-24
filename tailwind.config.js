@@ -1,118 +1,153 @@
-import path from 'node:path';
-
-import { addDynamicIconSelectors } from '@iconify/tailwind';
-import { getPackagesSync } from '@manypkg/get-packages';
-import typographyPlugin from '@tailwindcss/typography';
-import animate from 'tailwindcss-animate';
-
-import { enterAnimationPlugin } from '@vben/tailwind-config/plugins/entry';
+import { addDynamicIconSelectors } from '@iconify/tailwind'
+import typographyPlugin from '@tailwindcss/typography'
+import animate from 'tailwindcss-animate'
 
 // import defaultTheme from 'tailwindcss/defaultTheme';
 
-const { packages } = getPackagesSync(process.cwd());
+import plugin from 'tailwindcss/plugin.js'
 
-const tailwindPackages = [];
+const enterAnimationPlugin = plugin(({ addUtilities }) => {
+  const maxChild = 5
+  const utilities = {}
+  for (let i = 1; i <= maxChild; i++) {
+    const baseDelay = 0.1
+    const delay = `${baseDelay * i}s`
 
-packages.forEach((pkg) => {
-  // apps目录下和 @vben-core/tailwind-ui 包需要使用到 tailwindcss ui
-  // if (fs.existsSync(path.join(pkg.dir, 'tailwind.config.mjs'))) {
-  tailwindPackages.push(pkg.dir);
-  // }
-});
+    utilities[`.enter-x:nth-child(${i})`] = {
+      animation: `enter-x-animation 0.3s ease-in-out ${delay} forwards`,
+      opacity: '0',
+      transform: `translateX(50px)`
+    }
+
+    utilities[`.enter-y:nth-child(${i})`] = {
+      animation: `enter-y-animation 0.3s ease-in-out ${delay} forwards`,
+      opacity: '0',
+      transform: `translateY(50px)`
+    }
+
+    utilities[`.-enter-x:nth-child(${i})`] = {
+      animation: `enter-x-animation 0.3s ease-in-out ${delay} forwards`,
+      opacity: '0',
+      transform: `translateX(-50px)`
+    }
+
+    utilities[`.-enter-y:nth-child(${i})`] = {
+      animation: `enter-y-animation 0.3s ease-in-out ${delay} forwards`,
+      opacity: '0',
+      transform: `translateY(-50px)`
+    }
+  }
+
+  // 添加动画关键帧
+  addUtilities(utilities)
+  addUtilities({
+    '@keyframes enter-x-animation': {
+      to: {
+        opacity: '1',
+        transform: 'translateX(0)'
+      }
+    },
+    '@keyframes enter-y-animation': {
+      to: {
+        opacity: '1',
+        transform: 'translateY(0)'
+      }
+    }
+  })
+})
 
 const shadcnUiColors = {
   accent: {
     DEFAULT: 'hsl(var(--accent))',
     foreground: 'hsl(var(--accent-foreground))',
     hover: 'hsl(var(--accent-hover))',
-    lighter: 'has(val(--accent-lighter))',
+    lighter: 'has(val(--accent-lighter))'
   },
   background: {
     deep: 'hsl(var(--background-deep))',
-    DEFAULT: 'hsl(var(--background))',
+    DEFAULT: 'hsl(var(--background))'
   },
   border: {
-    DEFAULT: 'hsl(var(--border))',
+    DEFAULT: 'hsl(var(--border))'
   },
   card: {
     DEFAULT: 'hsl(var(--card))',
-    foreground: 'hsl(var(--card-foreground))',
+    foreground: 'hsl(var(--card-foreground))'
   },
   destructive: {
     ...createColorsPalette('destructive'),
-    DEFAULT: 'hsl(var(--destructive))',
+    DEFAULT: 'hsl(var(--destructive))'
   },
 
   foreground: {
-    DEFAULT: 'hsl(var(--foreground))',
+    DEFAULT: 'hsl(var(--foreground))'
   },
 
   input: {
     background: 'hsl(var(--input-background))',
-    DEFAULT: 'hsl(var(--input))',
+    DEFAULT: 'hsl(var(--input))'
   },
   muted: {
     DEFAULT: 'hsl(var(--muted))',
-    foreground: 'hsl(var(--muted-foreground))',
+    foreground: 'hsl(var(--muted-foreground))'
   },
   popover: {
     DEFAULT: 'hsl(var(--popover))',
-    foreground: 'hsl(var(--popover-foreground))',
+    foreground: 'hsl(var(--popover-foreground))'
   },
   primary: {
     ...createColorsPalette('primary'),
-    DEFAULT: 'hsl(var(--primary))',
+    DEFAULT: 'hsl(var(--primary))'
   },
 
   ring: 'hsl(var(--ring))',
   secondary: {
     DEFAULT: 'hsl(var(--secondary))',
     desc: 'hsl(var(--secondary-desc))',
-    foreground: 'hsl(var(--secondary-foreground))',
-  },
-};
+    foreground: 'hsl(var(--secondary-foreground))'
+  }
+}
 
 const customColors = {
   green: {
     ...createColorsPalette('green'),
-    foreground: 'hsl(var(--success-foreground))',
+    foreground: 'hsl(var(--success-foreground))'
   },
   header: {
-    DEFAULT: 'hsl(var(--header))',
+    DEFAULT: 'hsl(var(--header))'
   },
   heavy: {
     DEFAULT: 'hsl(var(--heavy))',
-    foreground: 'hsl(var(--heavy-foreground))',
+    foreground: 'hsl(var(--heavy-foreground))'
   },
   main: {
-    DEFAULT: 'hsl(var(--main))',
+    DEFAULT: 'hsl(var(--main))'
   },
   overlay: {
     content: 'hsl(var(--overlay-content))',
-    DEFAULT: 'hsl(var(--overlay))',
+    DEFAULT: 'hsl(var(--overlay))'
   },
   red: {
     ...createColorsPalette('red'),
-    foreground: 'hsl(var(--destructive-foreground))',
+    foreground: 'hsl(var(--destructive-foreground))'
   },
   sidebar: {
     deep: 'hsl(var(--sidebar-deep))',
-    DEFAULT: 'hsl(var(--sidebar))',
+    DEFAULT: 'hsl(var(--sidebar))'
   },
   success: {
     ...createColorsPalette('success'),
-    DEFAULT: 'hsl(var(--success))',
+    DEFAULT: 'hsl(var(--success))'
   },
   warning: {
     ...createColorsPalette('warning'),
-    DEFAULT: 'hsl(var(--warning))',
+    DEFAULT: 'hsl(var(--warning))'
   },
   yellow: {
     ...createColorsPalette('yellow'),
-    foreground: 'hsl(var(--warning-foreground))',
-  },
-};
-
+    foreground: 'hsl(var(--warning-foreground))'
+  }
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -130,7 +165,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '1.5rem',
+      padding: '2rem',
       screens: {
         '2xl': '1400px'
       }
@@ -141,67 +176,64 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out',
-        float: 'float 5s linear 0ms infinite',
+        float: 'float 5s linear 0ms infinite'
       },
 
       animationDuration: {
-        '2000': '2000ms',
-        '3000': '3000ms',
+        2000: '2000ms',
+        3000: '3000ms'
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
-        xl: 'calc(var(--radius) + 4px)',
+        xl: 'calc(var(--radius) + 4px)'
       },
       boxShadow: {
         float: `0 6px 16px 0 rgb(0 0 0 / 8%),
           0 3px 6px -4px rgb(0 0 0 / 12%),
-          0 9px 28px 8px rgb(0 0 0 / 5%)`,
+          0 9px 28px 8px rgb(0 0 0 / 5%)`
       },
       colors: {
         ...customColors,
-        ...shadcnUiColors,
+        ...shadcnUiColors
       },
       fontFamily: {
         sans: [
-          'var(--font-family)',
+          'var(--font-family)'
           //  ...defaultTheme.fontFamily.sans
-        ],
+        ]
       },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 'var(--radix-accordion-content-height)' }
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          to: { height: '0' }
         },
         'collapsible-down': {
           from: { height: '0' },
-          to: { height: 'var(--radix-collapsible-content-height)' },
+          to: { height: 'var(--radix-collapsible-content-height)' }
         },
         'collapsible-up': {
           from: { height: 'var(--radix-collapsible-content-height)' },
-          to: { height: '0' },
+          to: { height: '0' }
         },
         float: {
           '0%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
-          '100%': { transform: 'translateY(0)' },
-        },
+          '100%': { transform: 'translateY(0)' }
+        }
       },
       zIndex: {
-        '100': '100',
-        '1000': '1000',
-      },
-    },
+        100: '100',
+        1000: '1000'
+      }
+    }
   },
-  plugins: [animate,
-    typographyPlugin,
-    addDynamicIconSelectors(),
-    enterAnimationPlugin,]
+  plugins: [animate, typographyPlugin, addDynamicIconSelectors(), enterAnimationPlugin]
 }
 
 function createColorsPalette(name) {
@@ -261,6 +293,6 @@ function createColorsPalette(name) {
     // 主色文本激活态
     'text-active': `hsl(var(--${name}-700))`,
     // 主色文本悬浮态
-    'text-hover': `hsl(var(--${name}-600))`,
-  };
+    'text-hover': `hsl(var(--${name}-600))`
+  }
 }
