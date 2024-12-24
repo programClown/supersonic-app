@@ -1,4 +1,4 @@
-# supersonic[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/umbrella22/electron-vite-template/tree/strict)
+# supersonic
 
 [![vue](https://img.shields.io/badge/vue-3.2.23-brightgreen.svg)](https://github.com/vuejs/vue-next)
 [![vite](https://img.shields.io/badge/vite-3.0.3-brightgreen.svg)](https://github.com/vitejs/vite)
@@ -7,6 +7,8 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/umbrella22/electron-vite-template/blob/master/LICENSE)
 
 [国内访问地址](https://gitee.com/Zh-Sky/electron-vite-template)
+
+# tailwind 学不会！！！！！！！！！！！！！！！！！！！
 
 ### 请确保您的 node 版本大于等于 16.
 
